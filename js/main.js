@@ -10,6 +10,12 @@ particlesJS.load('particles-js-3', 'js/particlesjs-config.json', function () {
     console.log('callback - particles.js config loaded');
 });
 
+var screenWidth = $(window).width()
+var mobile;
+if (screenWidth < 490) {
+    mobile = true;
+}
+
 $("html, body").animate({ scrollTop: 0 }, "fast")
 
 $('.specialCard').hover(function () {
@@ -103,9 +109,11 @@ $(window).on('resize scroll', function () {
         if (rightSide == true) {
             return false;
         } else {
-            blockScroll()
-            vertScroll()
-            vertScrollFirefox()
+            if (mobile == false) {
+                blockScroll()
+                vertScroll()
+                vertScrollFirefox()
+            }
         }
     }
 
@@ -164,7 +172,6 @@ function vertScroll() {
     }, { passive: false });
 }
 
-var screenWidth = $(window).width()
 var maxWidth = 0;
 
 $.each($('.sliderItem'), function (key, value) {
