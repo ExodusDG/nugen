@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SJOB PORTAL - Checkout Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+    <!-- HEADER -->
+
+    <section class="header headerPage">
+        <div class="navbar">
+            <div class="container">
+                <nav>
+                    <ul class="navbarList">
+                        <li class="navbarListLeft">
+                            <a href="/"><img class="logotype" src="images/logotype.svg" alt="Logotype"></a>
+                            <div class="language">
+                                <img class="languageFlag" src="images/uk_flag.png" alt="FLag">
+                                <p>English</p>
+                                <img src="images/down.svg" alt="Down">
+
+                                <div class="languageList">
+                                    <div class="languageListItem">
+                                        <img class="languageFlag" src="images/uk_flag.png" alt="Flag">
+                                        <p>English</p>
+                                    </div>
+                                    <div class="languageListItem">
+                                        <img class="languageFlag" src="images/nt_flag.png" alt="Flag">
+                                        <p>Netherlands</p>
+                                    </div>
+                                    <div class="languageListItem">
+                                        <img class="languageFlag" src="images/ge_flag.png" alt="Flag">
+                                        <p>Germany</p>
+                                    </div>
+                                    <div class="languageListItem">
+                                        <img class="languageFlag" src="images/pl_flag.png" alt="Flag">
+                                        <p>Poland</p>
+                                    </div>
+                                    <div class="languageListItem">
+                                        <img class="languageFlag" src="images/ua_flag.png" alt="Flag">
+                                        <p>Ukraine</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="navbarLinkCart">
+                            <a href="#">
+                                <p>Cart</p>
+                                <i class="fa-solid fa-cart-shopping"></i>
+                            </a>
+
+                            <!-- CART -->
+                            <div class="cart">
+                                <img class="cartTop" src="images/cartTop.svg" alt="cart Top">
+                                <div class="cartItems">
+                                    <div class="cartItem">
+                                        <div>
+                                            <p class="cartItemTitle">Package 1</p>
+                                            <p class="cartItemPrice">12 months - €30 - <span>20% discount</span></p>
+                                        </div>
+                                        <div class="cartItemDelete">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="cartItem">
+                                        <div>
+                                            <p class="cartItemTitle">Package 1</p>
+                                            <p class="cartItemPrice">12 months - €30 - <span>20% discount</span></p>
+                                        </div>
+                                        <div class="cartItemDelete">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="cartItem">
+                                        <div>
+                                            <p class="cartItemTitle">Package 1</p>
+                                            <p class="cartItemPrice">12 months - €30 - <span>20% discount</span></p>
+                                        </div>
+                                        <div class="cartItemDelete">
+                                            <i class="fa-solid fa-circle-xmark"></i>
+                                        </div>
+                                    </div>
+                                    <div class="cartTotal">
+                                        <p>Total: <span>€135</span></p>
+                                    </div>
+                                    <div class="cartButtons">
+                                        <button class="buttonBusket">Complete order</button>
+                                        <button class="whiteBusket">View all your items</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- CART END -->
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <div class="pageHeader">
+            <div class="container">
+                <h1>ORDER Page</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia, molestiae quas vel sint
+                    commodi repudiandae.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CHECKOUT -->
+
+    <section class="checkout">
+        <div class="container">
+            <div class="checkoutInfo">
+                <div class="checkoutCompany">
+                    <p>Company Information</p>
+                    <div>
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Name">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Email">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Country">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="City">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Adress">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Tax ID">
+                        <input class="checkoutInput" type="text" name="checkoutName" id="checkoutName"
+                            placeholder="Registration number">
+                    </div>
+
+                    <div class="checkoutPayment">
+                        <p>Payment</p>
+                        <form>
+                            <div class="paymentMethod"><input checked type="radio" id="paymentCredit"
+                                    value="paymentCredit" /><label class="labelChecked" for="paymentCredit">Credit
+                                    Card</label></div>
+                            <div class="paymentMethod"><input type="radio" id="paymentBank" value="paymentBank" /><label
+                                    for="paymentBank">Bank Transfer</label></div>
+                        </form>
+
+                        <button class="blueButton checkoutButton">ORDER</button>
+                    </div>
+                </div>
+                <div class="checkoutSelected">
+                    <p>Selected Packages</p>
+
+                    <div class="checkoutList">
+                        <div class="checkoutItem">
+                            <div>
+                                <p>Package 1</p>
+                                <p>€ 144</p>
+                            </div>
+                            <p class="checkoutItemDesc">12 months <span>20% discount</span></p>
+                        </div>
+                        <div class="checkoutItem">
+                            <div>
+                                <p>Package 1</p>
+                                <p>€ 144</p>
+                            </div>
+                            <p class="checkoutItemDesc">12 months <span>20% discount</span></p>
+                        </div>
+                        <div class="checkoutItem">
+                            <div>
+                                <p>Package 1</p>
+                                <p>€ 144</p>
+                            </div>
+                            <p class="checkoutItemDesc">12 months <span>20% discount</span></p>
+                        </div>
+                    </div>
+                    
+                    <a href="shopping.html"><button class="checkoutSelectedButton">View all your items</button></a>
+                    <hr class="checkoutLine">
+                    <div class="checkoutBottom">
+                        <p class="checkoutTotal">Total (EUR)</p>
+                        <p>€ 1,094</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+        <div class="container">
+            <div class="footerWrapper">
+                <img src="images/logotype.svg" alt="Logotype">
+                <p>© 2022 SJOB PORTAL. All rights reserved.</p>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

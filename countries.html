@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countries</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    * {
+        font-family: 'Lato', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #F4F9FF;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1100px;
+    }
+
+    .headerLogotype {
+        margin-top: 30px;
+        text-align: center;
+    }
+
+    .mapImage {
+        text-align: center;
+        width: 1000px;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+
+    .mapImage img {
+        width: 100%;
+    }
+
+    .mapContent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: rgba(244, 249, 255, 0.86);
+        width: 100%;
+        height: 100%;
+    }
+
+    .map {
+        position: relative;
+    }
+
+    .mapTextHeader {
+        text-align: center;
+        margin-top: 80px;
+    }
+
+    .mapTextHeader h1 {
+        color: #3F2B4F;
+        font-weight: 600;
+        font-size: 44px;
+        line-height: 136.5%;
+        letter-spacing: -0.02em;
+        color: #3F2B4F;
+    }
+
+    .mapTextHeader p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 136.5%;
+        text-align: center;
+        letter-spacing: -0.02em;
+        color: rgba(63, 43, 79, 0.63);
+        width: 600px;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+
+    .mapCountryItem {
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .mapCountryItem:hover {
+        background: rgba(3, 117, 250, 0.59);
+        color: white;
+    }
+
+    .mapCountryItem img {
+        max-width: 32px;
+        margin-right: 15px;
+    }
+
+    .mapCountryItem {
+        text-decoration: none;
+        color: #3F2B4F;
+        font-weight: 700;
+    }
+
+    .mapCountryList {
+        display: grid;
+        gap: 20px;
+        column-gap: 100px;
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 80px;
+    }
+
+    footer {
+        background: #26323b;
+        padding: 25px;
+        width: 100vw;
+        position: relative;
+        top: 300px;
+        color: white;
+        font-weight: 700;
+        text-align: center;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    @media (max-width: 1024px) {
+        .mapCountryList {
+            column-gap: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mapCountryList {
+            grid-template-columns: repeat(3, 1fr);
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 60px;
+        }
+
+        .mapTextHeader p {
+            width: 90%;
+            margin: 0 auto;
+            margin-top: 25px;
+
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mapCountryList {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .mapCountryList {
+            padding-bottom: 50px;
+        }
+
+        footer {
+            top: 200px;
+        }
+    }
+
+    @media (max-width: 430px) {
+        .mapTextHeader h1 {
+            font-size: 32px;
+        }
+
+    }
+</style>
+
+<body>
+
+    <div class="headerLogotype">
+        <a href="/"><svg width="148" height="51" viewBox="0 0 148 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M16.3213 11.9552V0.851685H24.0013V30.8613H16.3213V19.329H7.82153V30.8613H0.0983887V0.851685H7.82153V11.9552H16.3213ZM58.9945 30.8613H50.6673L49.3729 26.5313H39.3199L38.0255 30.8613H29.6551L39.6219 0.851685H49.0277L58.9945 30.8613ZM44.3248 9.72594L41.3046 19.9292H47.3882L44.3248 9.72594ZM64.6422 0.851685H76.3779C79.4268 0.851685 81.9869 1.83771 84.0579 3.80977C86.129 5.78183 87.1645 8.2969 87.1645 11.355C87.1645 14.4132 86.129 16.9282 84.0579 18.9003C81.9869 20.8724 79.4268 21.8584 76.3779 21.8584H72.3654V30.8613H64.6422V0.851685ZM72.3654 14.5703H76.3779C77.2409 14.5703 77.9599 14.2702 78.5352 13.6701C79.1393 13.0699 79.4413 12.2982 79.4413 11.355C79.4413 10.4119 79.1393 9.6545 78.5352 9.08288C77.9599 8.48269 77.2409 8.18259 76.3779 8.18259H72.3654V14.5703ZM93.6276 0.851685H105.363C108.412 0.851685 110.972 1.83771 113.043 3.80977C115.114 5.78183 116.15 8.2969 116.15 11.355C116.15 14.4132 115.114 16.9282 113.043 18.9003C110.972 20.8724 108.412 21.8584 105.363 21.8584H101.351V30.8613H93.6276V0.851685ZM101.351 14.5703H105.363C106.226 14.5703 106.945 14.2702 107.521 13.6701C108.125 13.0699 108.427 12.2982 108.427 11.355C108.427 10.4119 108.125 9.6545 107.521 9.08288C106.945 8.48269 106.226 8.18259 105.363 8.18259H101.351V14.5703ZM138.813 0.851685H147.485L137.303 19.329V30.8613H129.58V19.4147L119.397 0.851685H128.07L133.42 11.9552L138.813 0.851685Z"
+                    fill="#0375FA" />
+                <path
+                    d="M5.67506 50.1524C4.02111 50.1524 2.66181 49.6132 1.59708 48.5347C0.532358 47.4666 0 46.1417 0 44.5598C0 42.9779 0.532358 41.653 1.59708 40.5849C2.66181 39.5064 4.02111 38.9672 5.67506 38.9672C6.65707 38.9672 7.56674 39.2033 8.40404 39.6759C9.24135 40.1485 9.89258 40.7852 10.3578 41.5863L9.1018 42.3104C8.79169 41.7146 8.32652 41.2423 7.70629 40.893C7.09642 40.5336 6.41933 40.3538 5.67506 40.3538C4.41394 40.3538 3.39057 40.7543 2.60494 41.5555C1.81931 42.3463 1.42652 43.3477 1.42652 44.5598C1.42652 45.7615 1.81931 46.7579 2.60494 47.5487C3.39057 48.3498 4.41394 48.7504 5.67506 48.7504C6.41933 48.7504 7.09642 48.5759 7.70629 48.2266C8.32652 47.8672 8.79169 47.3946 9.1018 46.8092L10.3578 47.5179C9.90293 48.319 9.25685 48.9611 8.41955 49.4437C7.5926 49.9163 6.67776 50.1524 5.67506 50.1524ZM25.8248 49.9521H24.2898L23.406 47.5333H18.5217L17.6379 49.9521H16.1028L20.1498 39.1675H21.7779L25.8248 49.9521ZM20.9561 40.8776L19.0179 46.1929H22.9098L20.9561 40.8776ZM40.409 49.9521H38.8119L36.3775 45.8231H33.8191V49.9521H32.3771V39.1675H36.7187C37.649 39.1675 38.4452 39.496 39.1065 40.1535C39.7682 40.8006 40.0989 41.5863 40.0989 42.5107C40.0989 43.209 39.8872 43.8461 39.4631 44.4211C39.029 45.0066 38.4917 45.4122 37.8506 45.6383L40.409 49.9521ZM36.7187 40.5078H33.8191V44.529H36.7187C37.2563 44.529 37.711 44.3337 38.0831 43.9435C38.4657 43.5533 38.6569 43.0757 38.6569 42.5107C38.6569 41.9457 38.4657 41.4734 38.0831 41.0933C37.711 40.7031 37.2563 40.5078 36.7187 40.5078ZM48.57 45.1761V48.5963H53.6093V49.9521H47.128V39.1675H53.5318V40.5232H48.57V43.8357H53.1442V45.1761H48.57ZM62.0643 45.1761V48.5963H67.1036V49.9521H60.6222V39.1675H67.0261V40.5232H62.0643V43.8357H66.6384V45.1761H62.0643ZM82.1484 49.9521H80.5513L78.117 45.8231H75.5585V49.9521H74.1165V39.1675H78.4581C79.3884 39.1675 80.1843 39.496 80.846 40.1535C81.5073 40.8006 81.8383 41.5863 81.8383 42.5107C81.8383 43.209 81.6263 43.8461 81.2026 44.4211C80.7684 45.0066 80.2308 45.4122 79.59 45.6383L82.1484 49.9521ZM78.4581 40.5078H75.5585V44.529H78.4581C78.9954 44.529 79.4504 44.3337 79.8226 43.9435C80.2048 43.5533 80.3963 43.0757 80.3963 42.5107C80.3963 41.9457 80.2048 41.4734 79.8226 41.0933C79.4504 40.7031 78.9954 40.5078 78.4581 40.5078ZM92.2052 50.1524C91.1919 50.1524 90.3236 49.9213 89.6002 49.4591C88.887 48.9865 88.3854 48.3344 88.0962 47.5025L89.3366 46.7938C89.7499 48.0983 90.7166 48.7504 92.2362 48.7504C92.97 48.7504 93.5333 48.6014 93.9263 48.3036C94.3294 48.0059 94.531 47.5999 94.531 47.0865C94.531 46.5831 94.3345 46.1979 93.9418 45.931C93.5902 45.6949 92.9339 45.4226 91.9726 45.1144L90.9337 44.7755C90.7062 44.6831 90.4065 44.5494 90.0344 44.3749C89.6724 44.19 89.4088 44.0052 89.2436 43.8203C88.7885 43.3273 88.5614 42.7264 88.5614 42.0177C88.5614 41.0729 88.892 40.3333 89.5537 39.7991C90.2151 39.2445 91.0214 38.9672 91.9726 38.9672C92.82 38.9672 93.5643 39.1778 94.2054 39.5988C94.8462 40.0198 95.3269 40.5953 95.6474 41.3244L94.438 42.0177C93.9728 40.9084 93.151 40.3538 91.9726 40.3538C91.3834 40.3538 90.9078 40.4975 90.5461 40.7852C90.1841 41.0729 90.0034 41.4631 90.0034 41.9561C90.0034 42.4286 90.1739 42.788 90.5151 43.0345C90.8663 43.2914 91.4555 43.548 92.2827 43.8049L92.9184 44.0052C93.2697 44.1388 93.4611 44.2105 93.4921 44.2208C93.8228 44.3441 94.1845 44.5136 94.5775 44.7293C94.8566 44.8833 95.1357 45.1195 95.4148 45.438C95.7765 45.7974 95.9575 46.3366 95.9575 47.0557C95.9575 48.0005 95.611 48.7554 94.9187 49.3205C94.2155 49.8751 93.3111 50.1524 92.2052 50.1524ZM102.861 49.9521V39.1675H104.303V49.9521H102.861ZM111.02 39.1675H118.85V40.5232H115.64V49.9521H114.214V40.5232H111.02V39.1675ZM126.991 45.1761V48.5963H132.03V49.9521H125.549V39.1675H131.953V40.5232H126.991V43.8357H131.565V45.1761H126.991ZM142.548 50.1524C141.534 50.1524 140.666 49.9213 139.943 49.4591C139.229 48.9865 138.728 48.3344 138.439 47.5025L139.679 46.7938C140.092 48.0983 141.059 48.7504 142.579 48.7504C143.312 48.7504 143.876 48.6014 144.269 48.3036C144.672 48.0059 144.873 47.5999 144.873 47.0865C144.873 46.5831 144.677 46.1979 144.284 45.931C143.933 45.6949 143.276 45.4226 142.315 45.1144L141.276 44.7755C141.049 44.6831 140.749 44.5494 140.377 44.3749C140.015 44.19 139.751 44.0052 139.586 43.8203C139.131 43.3273 138.904 42.7264 138.904 42.0177C138.904 41.0729 139.234 40.3333 139.896 39.7991C140.557 39.2445 141.364 38.9672 142.315 38.9672C143.162 38.9672 143.907 39.1778 144.548 39.5988C145.189 40.0198 145.669 40.5953 145.99 41.3244L144.78 42.0177C144.315 40.9084 143.493 40.3538 142.315 40.3538C141.726 40.3538 141.25 40.4975 140.888 40.7852C140.526 41.0729 140.346 41.4631 140.346 41.9561C140.346 42.4286 140.516 42.788 140.857 43.0345C141.209 43.2914 141.798 43.548 142.625 43.8049L143.261 44.0052C143.612 44.1388 143.803 44.2105 143.835 44.2208C144.165 44.3441 144.527 44.5136 144.92 44.7293C145.199 44.8833 145.478 45.1195 145.757 45.438C146.119 45.7974 146.3 46.3366 146.3 47.0557C146.3 48.0005 145.953 48.7554 145.261 49.3205C144.558 49.8751 143.653 50.1524 142.548 50.1524Z"
+                    fill="#3F2B4F" />
+            </svg>
+        </a>
+    </div>
+
+    <div class="map">
+        <div class="mapImage">
+            <img src="https://i.ibb.co/yNSmRqR/bg-map-removebg-1.png" alt="Image">
+        </div>
+        <div class="mapContent">
+            <div class="container">
+                <div class="mapTextHeader">
+                    <h1>Aim Higher. Reach Farther. Dream Bigger.</h1>
+                    <p>A better career is out there. We'll help you find it. We're your first step to becoming
+                        everything you want to be.</p>
+                </div>
+
+                <div class="mapCountryList">
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_up-flag.gif"
+                            alt="Flag">
+                        <p>Ukraine</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_ez-flag.gif"
+                            alt="Flag">
+                        <p>Czech Republic</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_pl-flag.gif"
+                            alt="Flag">
+                        <p>Poland</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_nl-flag.gif"
+                            alt="Flag">
+                        <p>Netherlands</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_up-flag.gif"
+                            alt="Flag">
+                        <p>Ukraine</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_ez-flag.gif"
+                            alt="Flag">
+                        <p>Czech Republic</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_pl-flag.gif"
+                            alt="Flag">
+                        <p>Poland</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_nl-flag.gif"
+                            alt="Flag">
+                        <p>Netherlands</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_up-flag.gif"
+                            alt="Flag">
+                        <p>Ukraine</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_ez-flag.gif"
+                            alt="Flag">
+                        <p>Czech Republic</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_pl-flag.gif"
+                            alt="Flag">
+                        <p>Poland</p>
+                    </a>
+                    <a href="https://www.happycareersites.com/" class="mapCountryItem">
+                        <img class="countryImage" src="https://www.worldometers.info/img/flags/small/tn_nl-flag.gif"
+                            alt="Flag">
+                        <p>Netherlands</p>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2022 HappyCareersites. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
