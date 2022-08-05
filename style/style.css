@@ -48,13 +48,16 @@ body {
     z-index: 999;
     transition: 0.3s;
 }
+
 .menuFixed {
     background: #e1f7ff !important;
     padding-top: 20px !important;
 }
+
 .menuFixed a {
     color: #181B2E;
 }
+
 .logotype {
     width: 200px;
 }
@@ -87,6 +90,21 @@ body {
     color: #F51F89
 }
 
+.world main {
+    overflow-x: hidden;
+    display: flex;
+    position: sticky;
+    top: 0;
+}
+
+.world section {
+    min-width: 50vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4ch;
+}
 
 
 /* HEADER */
@@ -241,29 +259,45 @@ body {
 
 .world {
     background-image: url('../images/siteBG.png');
-    height: 960px;
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .worldContent {
     position: relative;
-    left: 160px;
-    top: 200px;
+    padding-left: 160px;
+    top: 0px;
+    height: 70vh;
+    width: 100vw;
+    padding-top: 0vh;
+    overflow-x: scroll;
+    will-change: transform;
+    transform-style: preserve-3d;
 }
 
+.horizontalScrollOff {
+    pointer-events: none;
+}
+.worldsSliderWrapper {
+    margin-top: 20vh;
+}
 .sliderText {
     font-weight: 700;
-    font-size: 106px;
+    font-size: 96px;
     line-height: 166.5%;
     color: #181B2E;
 }
 
 .sliderText_2 {
     position: relative;
-    left: 200px;
+    left: 130px;
 }
+
 .sliderItem {
     margin-right: 50px;
 }
+
 .sliderItemBlock {
     width: 600px;
     height: 200px;
@@ -294,6 +328,11 @@ body {
     display: flex;
     align-items: center;
     transition: 0.3s;
+   padding-right: 200px;
+}
+
+.worldContent::-webkit-scrollbar {
+    width: 0;
 }
 
 .sliderTextBlock {
@@ -632,10 +671,12 @@ body {
     text-align: right;
     width: 40%;
 }
+
 .stepsList {
     width: 80%;
     margin: 0 auto;
 }
+
 .stepsRight {
     text-align: left;
     width: 40%;
@@ -650,6 +691,7 @@ body {
     color: #FFFFFF;
     margin-bottom: 70px;
 }
+
 .stepsText {
     height: 166px;
 }
@@ -657,6 +699,7 @@ body {
 .stepsNumber {
     height: 166px;
 }
+
 .stepsText {
     position: relative;
 
@@ -714,7 +757,7 @@ body {
 
 
 .worldBlack {
-    background:  #181B2E;
+    background: #181B2E;
 }
 
 .worldBlack .sliderText {
@@ -725,15 +768,16 @@ body {
     background: #181B2E !important;
     border-bottom: 2px solid #F51F89 !important;
 }
+
 .menuBlack a {
     color: white;
 }
 
-.specialBlack .particles-js{
+.specialBlack .particles-js {
     background: #181B2E !important;
 }
 
-.worldBlack >  .particles-js {
+.worldBlack>.particles-js {
     background: #181B2E !important;
 }
 
@@ -742,24 +786,29 @@ body {
     .container {
         max-width: 90%;
     }
+
     .sliderTextBlock {
         min-width: 80%;
     }
+
     .specialCard {
         max-width: 300px;
     }
+
     .specialCardText {
         font-size: 16px;
     }
+
     .goldList {
         gap: 40px;
     }
+
     .cheer {
         background-image: url('../images/cheer.png');
         height: 623px;
         background-size: cover;
     }
-} 
+}
 
 @media (max-width: 1366px) {
     .menuLinks a {
@@ -767,45 +816,55 @@ body {
         transition: 0.3s;
         margin-right: 20px;
     }
+
     .header h1 {
         font-size: 78px;
         line-height: 102px;
         width: 790px;
         color: white;
     }
+
     .header p {
         font-size: 20px;
         max-width: 724px;
     }
+
     .nmvcText {
         max-width: 45%;
         width: 100%;
     }
+
     .nmvcContent img {
         width: 40%;
     }
+
     .plotContent {
         display: block;
         justify-content: space-between;
     }
+
     .plot {
         background-image: url('../images/plotBG.png');
         height: auto;
         background-size: cover;
     }
+
     .plotImage {
         width: 300px;
         margin-top: 40px;
     }
+
     .sliderText {
         font-weight: 700;
         font-size: 76px;
         line-height: 166.5%;
         color: #181B2E;
     }
+
     .specialCard {
         max-width: 250px;
     }
+
     .lifeText {
         max-width: 50%;
         font-weight: 400;
@@ -820,50 +879,61 @@ body {
         background-image: url('../images/siteBG.png');
         height: 560px;
     }
+
     .worldContent {
         position: relative;
         left: 60px;
         top: 100px;
     }
+
     .sliderText {
         font-weight: 700;
         font-size: 46px;
         line-height: 166.5%;
         color: #181B2E;
     }
+
     .sliderTextBlock {
         min-width: 700px;
     }
+
     .specialCards {
         display: flex;
         justify-content: space-between;
         margin-top: 150px;
         flex-wrap: wrap;
     }
+
     .special {
         height: 1100px;
         padding-top: 0;
         padding-bottom: 0;
     }
+
     .goldHeader img {
         width: 30%;
         height: 150px;
     }
+
     .goldHeaderText {
         max-width: 60%;
     }
+
     .goldList {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
         margin-top: 50px;
     }
+
     .storesContent img {
         width: 30%;
     }
+
     .storesText {
         width: 60%;
     }
+
     .cheer {
         height: 435px;
     }
@@ -874,51 +944,63 @@ body {
         display: none !important;
         width: 0% !important;
     }
+
     .menu li {
         width: unset;
         text-align: left;
     }
+
     .menu ul {
         display: flex;
         justify-content: space-between;
         width: 90%;
         margin: 0 auto;
     }
+
     .header h1 {
         font-size: 58px;
         line-height: 72px;
         width: 90%;
     }
+
     .header p {
         max-width: 90%;
     }
+
     .nmvcContent {
         display: block;
         justify-content: space-between;
         align-items: center;
     }
+
     .nmvcText {
         max-width: 100%;
         width: 100%;
         margin-top: 100px;
     }
+
     .plotTable td {
         min-width: 97px;
     }
+
     .plotTable {
         color: white;
         font-size: 14px;
     }
+
     .specialCard {
         margin-bottom: 30px;
     }
+
     .quoteTextTitle {
         font-size: 36px;
         margin-top: 100px;
     }
+
     .quote {
         height: 500px;
     }
+
     .lifeText {
         max-width: 100%;
         font-weight: 400;
@@ -926,58 +1008,71 @@ body {
         line-height: 136.5%;
         color: #1E1E1E;
     }
+
     .lifeContent {
         display: block;
     }
+
     .lifeImage {
         margin-top: 50px;
     }
+
     .life {
         height: 962px;
         padding-top: 0;
         padding-bottom: 0;
         position: relative;
     }
+
     .gold {
         background-image: url('../images/siteBG-2.png');
         height: auto;
         background-size: cover;
     }
+
     .goldHeader {
         display: flex;
         justify-content: space-between;
         flex-direction: column-reverse;
     }
+
     .goldHeaderText {
         max-width: 100%;
     }
+
     .goldHeader img {
         width: 80%;
         height: auto;
         margin-top: 40px;
     }
+
     .storesContent {
         display: block;
         justify-content: space-between;
         margin-top: 50px;
         align-items: center;
     }
+
     .stores {
         height: 1052px;
         padding-top: 0;
         padding-bottom: 0;
         position: relative;
     }
+
     .storesText {
         width: 100%;
     }
+
     .storesContent img {
         width: 70%;
     }
+
     .stepsList {
         width: 100%;
         margin: 0 auto;
     }
+
     .cheer {
         height: 312px;
     }
@@ -987,73 +1082,92 @@ body {
     .logotype {
         width: 150px;
     }
+
     .menuLinks a {
         font-size: 14px;
         transition: 0.3s;
         margin-right: 15px;
     }
+
     .header p {
         max-width: 100%;
     }
+
     .nmvcContent img {
         width: 80%;
     }
+
     .nmvc {
         background-image: url('../images/siteBG.png');
         max-height: 1069px;
     }
+
     .worldsSliderWrapper {
         display: block;
         transition: 0.3s;
     }
+
     .sliderTextBlock {
         min-width: 100%;
     }
+
     .sliderText_2 {
         position: relative;
         left: 0px;
     }
+
     .world {
         background-image: url('../images/siteBG.png');
         height: auto;
     }
+
     .sliderItemBlock {
         width: 100%;
     }
+
     .sliderItem {
         margin-bottom: 50px;
     }
+
     .worldContent {
         position: relative;
         left: 0px;
         top: 100px;
     }
+
     .worldsSliderWrapper {
         width: 90%;
         margin: 0 auto;
     }
+
     .sliderItem {
         margin-right: 0px;
     }
+
     .special {
         height: 1700px;
     }
+
     .specialCards {
         display: block;
     }
+
     .specialCard {
         max-width: 100%;
         /* display: flex; */
     }
+
     .life {
         height: 1151px;
         padding-top: 0;
         padding-bottom: 0;
         position: relative;
     }
+
     .lifeImage {
         max-width: 100%;
     }
+
     .lifeImage img {
         width: 100%;
     }
@@ -1061,29 +1175,35 @@ body {
     .swiper-slide {
         width: 100%;
     }
+
     .swiper-slide img {
         width: 100%;
     }
+
     .goldList {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
         gap: 40px;
         margin-top: 50px;
     }
+
     .goldHeader img {
         width: 100%;
         height: auto;
         margin-top: 40px;
     }
+
     .stepsText {
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
         line-height: 34px;
     }
+
     .cheer {
         height: 200px;
     }
+
     .headerText {
         position: relative;
         top: 228px;
@@ -1096,46 +1216,57 @@ body {
         line-height: 62px;
         width: 90%;
     }
+
     .header p {
         font-size: 18px;
     }
+
     .siteTitle h1 {
         font-size: 46px;
         max-width: 100%;
     }
+
     .sliderText {
         font-weight: 700;
         font-size: 36px;
         line-height: 166.5%;
         color: #181B2E;
     }
+
     .sliderItemText {
         font-weight: 400;
         font-size: 14px;
         line-height: 136.5%;
         color: #1E1E1E;
     }
+
     .sliderItemBlock {
-       
+
         height: auto;
-       
+
     }
+
     .special {
         height: 1523px;
     }
+
     .specialCards {
         margin-top: 75px;
     }
+
     .quoteTextTitle {
         font-size: 36px;
         margin-top: 29px;
     }
+
     .swiper {
         height: 520px;
     }
+
     .game {
         height: 520px;
     }
+
     .swiper-slide {
         position: relative;
         top: 0px;
@@ -1148,9 +1279,11 @@ body {
         width: 100%;
         text-align: center;
     }
+
     .menu ul {
         flex-wrap: wrap;
     }
+
     .quoteTextTitle {
         font-size: 30px;
     }
