@@ -20,6 +20,17 @@ $('.specialCard').hover(function () {
 })
 
 
+var $page = $('html, body');
+    $('a[href*="#"]').click(function() {
+        $page.animate({
+            scrollTop: $($.attr(this, 'href')).offset().top
+        }, 600);
+        setTimeout(() => {
+            allowScroll()
+        }, 600);
+        return false;
+    }); //плавный скролл
+
 var swiper = new Swiper(".swiper", {
     direction: "vertical",
     loop: true,
