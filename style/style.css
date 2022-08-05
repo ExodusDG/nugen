@@ -180,7 +180,7 @@ body {
 /* PLOT */
 
 .plot {
-    background-image: url('/images/plotBG.png');
+    background-image: url('../images/plotBG.png');
     height: 820px;
 }
 
@@ -479,7 +479,7 @@ body {
 /* GAME */
 
 .game {
-    background-image: url('/images/gameBG.png');
+    background-image: url('../images/gameBG.png');
     height: 860px;
     padding-top: 0;
     padding-bottom: 0;
@@ -670,7 +670,7 @@ body {
 }
 
 .cheer {
-    background-image: url('/images/cheer.png');
+    background-image: url('../images/cheer.png');
     height: 750px;
     background-size: 100%;
 }
@@ -755,7 +755,7 @@ body {
         gap: 40px;
     }
     .cheer {
-        background-image: url('/images/cheer.png');
+        background-image: url('../images/cheer.png');
         height: 623px;
         background-size: cover;
     }
@@ -789,7 +789,7 @@ body {
         justify-content: space-between;
     }
     .plot {
-        background-image: url('/images/plotBG.png');
+        background-image: url('../images/plotBG.png');
         height: auto;
         background-size: cover;
     }
