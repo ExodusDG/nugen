@@ -21,15 +21,15 @@ $('.specialCard').hover(function () {
 
 
 var $page = $('html, body');
-    $('a[href*="#"]').click(function() {
-        $page.animate({
-            scrollTop: $($.attr(this, 'href')).offset().top
-        }, 600);
-        setTimeout(() => {
-            allowScroll()
-        }, 600);
-        return false;
-    }); //плавный скролл
+$('a[href*="#"]').click(function () {
+    $page.animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 600);
+    setTimeout(() => {
+        allowScroll()
+    }, 600);
+    return false;
+}); //плавный скролл
 
 var swiper = new Swiper(".swiper", {
     direction: "vertical",
@@ -105,6 +105,7 @@ $(window).on('resize scroll', function () {
         } else {
             blockScroll()
             vertScroll()
+            vertScrollFirefox()
         }
     }
 
@@ -118,29 +119,41 @@ $(window).on('resize scroll', function () {
     if ($('.life').isInViewport()) {
         blackTheme()
     } else {
-    
+
     }
 
     if ($('.stores').isInViewport()) {
         blackTheme()
     } else {
-    
+
     }
-    
+
 });
 
 function blockScroll() {
-  $('body').addClass('scrollDisabled')
+    $('body').addClass('scrollDisabled')
 }
 function allowScroll() {
     $('body').removeClass('scrollDisabled')
+}
+
+function vertScrollFirefox() {
+    window.addEventListener("wheel", function (e) {
+        wDelta = e.wheelDelta < 0 ? 'down' : 'up';
+        if (wDelta == 'down') {
+            if (rightSide == true) {
+                allowScroll()
+            } else {
+                scrollRight()
+            }
+        }
+    }, { passive: false });
 }
 
 
 function vertScroll() {
     window.addEventListener("mousewheel", function (e) {
         wDelta = e.wheelDelta < 0 ? 'down' : 'up';
-
         if (wDelta == 'down') {
             if (rightSide == true) {
                 allowScroll()
@@ -164,7 +177,7 @@ $.each($('.sliderItem'), function (key, value) {
 
 function scrollRight() {
     var currentTranslate = Number($('.worldsSliderWrapper').attr('style').replace('transform: translateX(-', '').replace('px);', ''))
-    var newTranslate = currentTranslate + 10;
+    var newTranslate = currentTranslate + 30;
 
     if (newTranslate > (maxWidth - screenWidth)) {
         rightSide = true;
@@ -303,7 +316,7 @@ new Skroll()
 
 new Skroll()
     .add(".quoteTitle-1", {
-        delay: 500,
+        delay: 100,
         duration: 900,
         animation: "slideInLeft"
     })
@@ -312,7 +325,7 @@ new Skroll()
 
 new Skroll()
     .add(".quoteTitle-2", {
-        delay: 700,
+        delay: 300,
         duration: 900,
         animation: "slideInRight"
     })
@@ -320,7 +333,7 @@ new Skroll()
 
 new Skroll()
     .add(".quoteTextBottom", {
-        delay: 1500,
+        delay: 600,
         duration: 400,
         animation: "fadeInUp"
     })
