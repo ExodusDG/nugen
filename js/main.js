@@ -119,7 +119,7 @@ $(window).on('resize scroll', function () {
 });
 
 function blockScroll() {
-  //  $('body').addClass('scrollDisabled')
+  $('body').addClass('scrollDisabled')
 }
 function allowScroll() {
     $('body').removeClass('scrollDisabled')
