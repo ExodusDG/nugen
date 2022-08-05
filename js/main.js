@@ -166,8 +166,12 @@ $(window).on('resize scroll', function () {
 
     if ($('.stores').isInViewport()) {
         blackTheme()
-    } else {
+    }
 
+    if ($('.nmvcContent img').isInViewport()) {
+        $('.nmvcContent img').addClass('imageShow')
+    } else {
+        $('.nmvcContent img').removeClass('imageShow')
     }
 
 });
