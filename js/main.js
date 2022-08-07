@@ -1,6 +1,16 @@
+
+
+/* HEADER ANIM */
+
+var headerCounter = 1;
+var headerTarget = $('.headerAnimation img')
+
+
+
+
+                
 const element = document.querySelector(".worldContent");
 var scrollCounter = 0;
-
 
 function blockScroll() {
     $('body').addClass('scrollDisabled')
@@ -9,52 +19,6 @@ function allowScroll() {
     $('body').removeClass('scrollDisabled')
 }
 
-element.addEventListener('wheel', (e) => {
-    e.preventDefault();
-
-    if (scrollCounter > 9) {
-
-        if ($('.worldContent').hasClass('horizontalScrollOff')) {
-
-        } else {
-            $('.worldContent').addClass('horizontalScrollOff')
-
-            setTimeout(() => {
-                $('.worldContent').removeClass('horizontalScrollOff')
-            }, 500);
-        }
-
-        scrollCounter = 9;
-
-    } else if (scrollCounter < 0) {
-        scrollCounter = 0;
-
-        if ($('.worldContent').hasClass('horizontalScrollOff')) {
-
-        } else {
-            $('.worldContent').addClass('horizontalScrollOff')
-
-            setTimeout(() => {
-                $('.worldContent').removeClass('horizontalScrollOff')
-            }, 500);
-        }
-    } else {
-        wDelta = e.wheelDelta < 0 ? 'down' : 'up';
-        if (wDelta == 'down') {
-            scrollCounter++;
-            var counterTranslate = scrollCounter * 10;
-            $('.worldsSliderWrapper').attr('style', 'transform: translate3d(-' + counterTranslate + '%, 0px, 0px);')
-        } else {
-            scrollLeft()
-        }
-    }
-
-    function scrollLeft() {
-        scrollCounter--;
-        var counterTranslate = scrollCounter * 10;
-        $('.worldsSliderWrapper').attr('style', 'transform: translate3d(-' + counterTranslate + '%, 0px, 0px);')
-    }
-});
 
 var screenWidth = $(window).width()
 var mobile;
@@ -117,11 +81,21 @@ $.fn.isInViewport2 = function () {
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
 
+$.fn.isInViewport3 = function () {
+    var elementTop = $(this).offset().top;
+    var elementBottom = elementTop + $(this).outerHeight();
+
+    var viewportTop = $(window).scrollTop() + $(window).height() / 3;
+    var viewportBottom = viewportTop + $(window).height()
+
+    return elementBottom > viewportTop && elementTop < viewportBottom;
+};
+
 var leftSide = true;
 var rightSide = false;
 
 /* STEP */
-
+var plotScrollCheck = false;
 $(window).on('resize scroll', function () {
 
     if ($(this).scrollTop() > 50) {
@@ -151,21 +125,14 @@ $(window).on('resize scroll', function () {
         }, 500);
     }
 
-    if ($('.special').isInViewport()) {
+    if ($('.specialBodyText').isInViewport2()) {
         blackTheme()
     } else {
         whiteTheme()
     }
 
-
-    if ($('.life').isInViewport()) {
-        blackTheme()
-    } else {
-
-    }
-
-    if ($('.stores').isInViewport()) {
-        blackTheme()
+    if ($('.globeBlock').isInViewport()) {
+        $('.globeBlock').addClass('globeBlockActive')
     }
 
     if ($('.nmvcContent img').isInViewport()) {
@@ -174,17 +141,27 @@ $(window).on('resize scroll', function () {
         $('.nmvcContent img').removeClass('imageShow')
     }
 
+
+    if ($('.plot').isInViewport3()) {
+        plotScrollCheck = true;
+    } else {
+        if (plotScrollCheck == true) {
+           
+            plotScrollCheck = false
+        }
+
+    }
+
 });
 
 
-
 function blackTheme() {
-    $('.sliderItemBlock').addClass('sliderItemBlack')
-    $('.world').addClass('worldBlack')
+    // $('.sliderItemBlock').addClass('sliderItemBlack')
+    // $('.world').addClass('worldBlack')
     $('.life').addClass('worldBlack')
     $('.stores').addClass('worldBlack')
     $('.menu').addClass('menuBlack')
-    $('.special').addClass('specialBlack')
+    $('.special').addClass('bgAnimChange')
 
 }
 
@@ -304,23 +281,6 @@ function websiteAnimations() {
             delay: 700,
             duration: 500,
             animation: "fadeInDown"
-        })
-        .init();
-
-    new Skroll()
-        .add(".quoteTitle-1", {
-            delay: 100,
-            duration: 900,
-            animation: "slideInLeft"
-        })
-        .init();
-
-
-    new Skroll()
-        .add(".quoteTitle-2", {
-            delay: 300,
-            duration: 900,
-            animation: "slideInRight"
         })
         .init();
 
