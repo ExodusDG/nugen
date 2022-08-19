@@ -76,7 +76,7 @@ $.fn.isInViewport2 = function () {
     var elementBottom = elementTop + $(this).outerHeight();
 
     var viewportTop = $(window).scrollTop();
-    var viewportBottom = viewportTop + $(window).height() - 200;
+    var viewportBottom = viewportTop + $(window).height();
 
     return elementBottom > viewportTop && elementTop < viewportBottom;
 };
@@ -125,7 +125,7 @@ $(window).on('resize scroll', function () {
         }, 500);
     }
 
-    if ($('.specialBodyText').isInViewport2()) {
+    if ($('.special').isInViewport2()) {
         blackTheme()
     } else {
         whiteTheme()
@@ -170,6 +170,7 @@ function whiteTheme() {
     $('.world').removeClass('worldBlack')
     $('.menu').removeClass('menuBlack')
     $('.special').removeClass('specialBlack')
+    $('.special').removeClass('bgAnimChange')
 }
 
 

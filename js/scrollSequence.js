@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 
+var bodyWidth = $(window).width()
+
 /* Main navigation */
 let panelsSection = document.querySelector("#panels"),
 	panelsContainer = document.querySelector("#panels-container"),
@@ -7,18 +9,23 @@ let panelsSection = document.querySelector("#panels"),
 
 
 /* Panels */
-const panels = gsap.utils.toArray("#panels-container .panel");
-tween = gsap.to(panels, {
-	xPercent: -100 * ( panels.length - 1 ),
-	ease: "none",
-	scrollTrigger: {
-		trigger: "#panels-container",
-		pin: true,
-		start: "top top",
-		scrub: 1,
-		end: () =>  "+=" + (panelsContainer.offsetWidth - innerWidth)
-	}
-});
+
+if (bodyWidth > 490) {
+    const panels = gsap.utils.toArray("#panels-container .panel");
+    tween = gsap.to(panels, {
+        xPercent: -100 * ( panels.length - 1 ),
+        ease: "none",
+        scrollTrigger: {
+            trigger: "#panels-container",
+            pin: true,
+            start: "top top",
+            scrub: 1,
+            end: () =>  "+=" + (panelsContainer.offsetWidth - innerWidth)
+        }
+    });
+}
+
+
 
 /* HEADER SCROLL */
 
