@@ -139,7 +139,7 @@ body {
 
 .header {
     width: 100vw;
-    height: 300vh;
+    height: 100vh;
     background-size: cover;
     background-attachment: fixed;
     background-image: url('../images/header__image.png');
@@ -1569,9 +1569,11 @@ body {
     top: 0vh;
     max-width: 3000px !important;
 }
+
 .pin-spacer {
     max-width: 3000px !important;
 }
+
 #page {
     background: linear-gradient(90deg, #E6F7FB 0%, #C9F0F8 22.2%, #C8E3F5 38.34%, #E8DCFB 63.34%, #B3E1EC 100%);
 }
@@ -1586,6 +1588,7 @@ body {
 #panels-container {
     height: 100vh !important;
 }
+
 .panel {
     padding-top: 100px;
 }
@@ -1612,26 +1615,90 @@ body {
     #panels #panels-container {
         display: block;
     }
+
     #panel-1 {
         width: 100% !important;
     }
+
     #panels #panels-container .panel {
         width: 100%;
     }
+
     #panels-container {
         width: 100% !important;
     }
+
     .sliderTextBlock {
         position: relative;
         top: 0px;
     }
+
     .sliderItemBlock {
         width: 100%;
     }
+
     #panels-container {
         height: auto !important;
     }
+
     .panel {
         padding-top: 20px;
+    }
+}
+
+.headerVideo {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+}
+
+.video-container {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transform: scale(1.15);
+}
+
+iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    overflow: hidden;
+    height: 100vh;
+    position: relative;
+}
+
+@media (max-width: 1024px) {
+    .video-container {
+        transform: scale(1.8);
+    }
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        transform: scale(1.7);
+        height: 70vh;
+    }
+    .header {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 490px) {
+    .video-container {
+        transform: scale(2.8);
+    }
+    .headerText {
+        position: relative;
+        top: 128px;
     }
 }
